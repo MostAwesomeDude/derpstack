@@ -9,6 +9,14 @@ init_holster(app)
 @app.holster("/")
 @html("index.html")
 def index():
-    return {"stories": ["Derp!"]}
+    return {
+        "stories": [
+                    {
+                        "body": "Today I derped the cloud.",
+                        "teller": "Me",
+                        "date": "today",
+                    }
+                   ]
+    }
 
 app.debug = True

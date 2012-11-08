@@ -9,21 +9,30 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="#">Derpstack</a>
+                    <a class="brand" href="{{ url_for("index") }}">
+                        Derpstack
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="hero-unit">
-            <h1>Derpstack</h1>
-            <p>Leveraging open cloud platforms, high availability compute
-            clusters, and platform vendor services as a service.</p>
+        <div class="span8 offset2">
+            <div class="hero-unit">
+                <h1>Derpstack</h1>
+                <p>Leveraging open cloud platforms, high availability compute
+                clusters, and platform vendor services as a service.</p>
+            </div>
+            {% for story in d.stories %}
+            <div class="well">
+                <blockquote>
+                    <p>{{ story.body }}</p>
+                    <small>{{ story.teller }} ~ {{ story.date }}</small>
+                </blockquote>
+            </div>
+            {% endfor %}
+            <hr />
+            <div>
+                <footer>&copy; Corbin Simpson 2012</footer>
+            </div>
         </div>
-        {% for story in d.stories %}
-        {{ story }}
-        {% endfor %}
-        <p>Derp.</p>
-        <footer>
-            <p>&copy; Corbin Simpson 2012</p>
-        </footer>
     </body>
 </html>
