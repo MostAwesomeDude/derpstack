@@ -1,0 +1,3 @@
+Flask>=0.9
+Flask-Holster>=0.2.3
+Flask-SQLAlchemy
